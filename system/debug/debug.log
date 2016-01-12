@@ -1,0 +1,6 @@
+[04-01-2016 19:21:55]	rol.php	Error: Unknown column 'usuario' in 'where clause'
+Query : SELECT * FROM usuario WHERE id = 1 AND usuario = '' AND rol_id =1 LIMIT 1 
+[04-01-2016 19:22:13]	rol.php	Error: Unknown column 'usuario' in 'where clause'
+Query : SELECT * FROM usuario WHERE id = 1 AND usuario = '' AND rol_id =1 LIMIT 1 
+[05-01-2016 20:34:20]	eliminarRol.php	Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Query : UPDATE rol SET activo = '0' WHERE id = 
