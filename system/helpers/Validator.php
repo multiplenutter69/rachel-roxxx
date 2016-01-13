@@ -3,7 +3,7 @@
 /**
  * Name         : Validator.php
  * Date         : Jan 2016
- * Version      : 1.0
+ * Version      : 
  * Author       : Stefan
  * Description  : Static Class. Provides a collection of services
  *              : to asist field validation
