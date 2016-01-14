@@ -3,7 +3,7 @@
 /**
  * Name         : AES.php
  * Date         : Jan 2016
- * Version      : 1.0
+ * Version      : 
  * Author       : Stefan
  * Description  : Static Class. Provides encrypton and decrypton functionality
  *              : using AES technology
@@ -17,7 +17,7 @@ class AES {
      * @param string $AESKey The key that would be used to perform the encryption
      * @return string Encrypted value
      */
-    public static function encrypt($value, $AESKey) {
+    public static function encryptValue($value, $AESKey) {
         return rtrim(
                 base64_encode(
                         mcrypt_encrypt(
@@ -35,7 +35,7 @@ class AES {
      * @param string $AESKey The key that the value was encrypted with
      * @return string Original value
      */
-    public static function decrypt($value, $AESKey) {
+    public static function decryptValue($value, $AESKey) {
         return rtrim(
                 mcrypt_decrypt(
                         MCRYPT_RIJNDAEL_256, $AESKey, base64_decode($value), MCRYPT_MODE_ECB, mcrypt_create_iv(

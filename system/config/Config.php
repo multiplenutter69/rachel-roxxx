@@ -6,7 +6,7 @@
  * Version      : 
  * Author       : Stefan
  * Description  : Config class. This entity handles all the parametrization of
- *              : the project
+ *              : the project. Singleton class
  * Notes        :
  */
 
@@ -18,28 +18,24 @@ define("RELEASE",1);
 define("ENABLED",1);
 define("DISABLED",0);
 
-//HASH METHOD
-define("MD5",1);
-define("SHA256",2);
-define("HAVALL11604",3);
-
 //AES KEY
 define("DEFAULT_AES_KEY","fbe07dfb68380f012ceffcca6031fbdf");
 
 
 class Config {
 
+    
+    
     //PROJECT CONFIGURATION
     private $project = "";
     private $root = "";
     private $rootURL = "";
-    private $projectEnalbe = ENABLE;
-    private $projectMode = DEBUG;
+//    private $projectEnalbe = ENABLE;
+//    private $projectMode = DEBUG;
     
     //SECURITY
     private $aesKey = DEFAULT_AES_KEY;
-    private $hashMethod = SHA256;
-    
+        
     //DB CONFIGURATION
     private $dbServerHost = "";
     private $dbUserName = "";
@@ -54,10 +50,10 @@ class Config {
      * <br>XML file MUST be adecuate to an especific format defined at Readme.md 
      * @param string $path path to the file (with extension)
      */
-    function __construct($path) {
+    private function __construct() {
 
         
-        $configXML = simplexml_load_file($path);
+        $configXML = simplexml_load_file("../../aplication/config/config.xml");
 
         if (!$configXML) {
 
@@ -74,6 +70,14 @@ class Config {
         }
     }
 
+    public static function getConfig() {
+        static $instance = null;
+        if ($instance == null) {
+            $instance = new Config();
+        }
+        return $instance;
+    }
+
     public function getProject() {
         return $this->project;
     }
@@ -85,8 +89,12 @@ class Config {
     public function getRootURL() {
         return $this->rootURL;
     }
+    
+    public function getAesKey() {
+        return $this->aesKey;
+    }
 
-    public function getDbServerHost() {
+        public function getDbServerHost() {
         return $this->dbServerHost;
     }
 
