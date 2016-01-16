@@ -9,9 +9,8 @@
  *              : Security handling on a project
  * Notes        :
  */
-
 require_once ("../config/Config.php");
-require_once (dirname(__FILE__)."/security/AES.php");
+require_once (dirname(__FILE__) . "/security/AES.php");
 
 class Security {
 
@@ -58,7 +57,7 @@ class Security {
 
         return $result;
     }
-    
+
     /**
      * Performs the hashing of a value using a hashing algorithm
      * @param string $value The value to be hashed
@@ -66,10 +65,10 @@ class Security {
      * <br>All hashing methods implements de IHash interface
      * @return string Generated hash
      */
-    public static function generateHash($value, $method){
+    public static function generateHash($value, $method) {
         return $method->hashValue($value);
     }
-    
+
     /**
      * Generates a captcha image from a value<br>
      * Captcha image is base64 encoded
@@ -81,7 +80,7 @@ class Security {
         $captcha = dirname(__FILE__) . "/security/captcha" . $value . ".jpg";
         $image = imagecreatefromjpeg(dirname(__FILE__) . "/security/fondo_captcha_60_30.jpg");
         $textColor = imagecolorallocate($image, 0, 0, 0);
-        
+
         imagestring($image, 5, 5, 5, $value, $textColor);
         imagejpeg($image, $captcha);
 
@@ -94,22 +93,22 @@ class Security {
 
         return $base64;
     }
-    
+
     /**
      * Performs the encryption of a value using AES schema
      * <br>The AES key is defined on the config
      * @param string $value Encrypted value
      */
-    public static function ecncrypt($value){
+    public static function ecncrypt($value) {
         AES::encryptValue($value, Config::getConfig()->getAesKey());
     }
-    
+
     /**
      * Performs the decryption of a value encripted by an AES schema
      * <br>The AES key is defined on the config
      * @param string $value Decrypted value
      */
-    public static function decrypt($value){
+    public static function decrypt($value) {
         AES::decryptValue($value, Config::getConfig()->getAesKey());
     }
 

@@ -9,6 +9,9 @@
  *              : in the use of list collections
  * Notes        :
  */
+
+require_once(dirname(__FILE__)."/IStefanCollection.php");
+
 define("ASC", 1);
 define("DESC", 2);
 define("EXCEPTION", "Unexisting Element");

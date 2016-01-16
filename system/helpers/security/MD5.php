@@ -8,6 +8,9 @@
  * Description  : 
  * Notes        :
  */
+
+require_once(dirname(__FILE__)."/IHash.php");
+
 class MD5 implements IHash {
     
     /**

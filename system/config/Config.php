@@ -24,6 +24,7 @@ define("DEFAULT_AES_KEY","fbe07dfb68380f012ceffcca6031fbdf");
 
 class Config {
 
+    static $instance = null;
     
     
     //PROJECT CONFIGURATION
@@ -71,11 +72,10 @@ class Config {
     }
 
     public static function getConfig() {
-        static $instance = null;
-        if ($instance == null) {
-            $instance = new Config();
+        if ($this->instance == null) {
+            $this->instance = new Config();
         }
-        return $instance;
+        return $this->instance;
     }
 
     public function getProject() {
