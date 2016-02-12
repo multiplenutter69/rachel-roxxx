@@ -9,6 +9,8 @@ interface IStefanCollection {
     public function add($element);
 
     public function get($element);
+    
+    public function getAll();
 
     public function getFirst($amount);
 

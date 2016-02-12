@@ -9,8 +9,7 @@
  *              : in the use of list collections
  * Notes        :
  */
-
-require_once(dirname(__FILE__)."/IStefanCollection.php");
+require_once(dirname(__FILE__) . "/IStefanCollection.php");
 
 define("ASC", 1);
 define("DESC", 2);
@@ -43,6 +42,16 @@ class stefanList implements IStefanCollection {
      */
     public function get($criteria) {
         return array_filter($this->objects, $criteria);
+    }
+
+    /**
+     * Returns the array of elements of the collection.<br>
+     * This method is created to be used on a foreach operation. <br>
+     * E.g: foreach($collection->getAll() as $object) ...
+     * @return array The array of elements of the collection
+     */
+    public function getAll() {
+        return $this->objects;
     }
 
     /**

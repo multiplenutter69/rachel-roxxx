@@ -61,7 +61,7 @@ class Security {
     /**
      * Performs the hashing of a value using a hashing algorithm
      * @param string $value The value to be hashed
-     * @param object $method The object that represents the hash algorithm
+     * @param IHash $method The IHash object that represents the hash algorithm
      * <br>All hashing methods implements de IHash interface
      * @return string Generated hash
      */
