@@ -21,7 +21,17 @@ $config["system_folder"] = "system";
  * "not available" view
  */
 $config["app_enable"] = true;
+/**
+ * "Not Available" view. If set, the view to be load should be saved on the
+ * application/view folder. If not set, the system redirects to a default view
+ */
 $config["app_enable_view"] = "";
+/**
+ * Initial view. Indicates which is the initial wiew to be loaded.
+ * If set, the view to be load should be saved on the application/view folder. 
+ * If not set, the system redirects to a default view
+ */
+$config["app_welcome_view"] = "";
 /**
  * Indicates whether the application is running on a development enviroment or
  * in a production enviroment. In production enviroments (false) errors ar not 
@@ -48,12 +58,13 @@ $config["app_libraries"] = "*";
  * Encryption is made using AES security
  */
 $config["aes_key"] = "stefanframework";
+
 //==============================================================================
 // System core configuration. Don't mess with this, don't be a little bitch
 //==============================================================================
 
 /**
- * Systeam definitionS
+ * System definitions
  */
 define("SF_VERSION_NUMBER", "3.0");
 define("SF_VERSION", "Rachel Roxxx");
@@ -62,7 +73,7 @@ define("DS", DIRECTORY_SEPARATOR);
 define("APPPATH" , dirname(__FILE__) . DS . $config["app_folder"]);
 define("SYSPATH", dirname(__FILE__) . DS . $config["system_folder"]);
 
-define("LOADPATH", SYSPATH . DS . "load");
+define("LOADPATH", SYSPATH . DS . "loader");
 define("LIBRARYPATH", SYSPATH . DS . "library");
 define("DEBUGPATH", SYSPATH . DS . "debug");
 
@@ -76,6 +87,10 @@ define("ERROR_101", "<b>Error - 101:</b> System could not find bootstrap file");
 define("ERROR_102", "<b>Error - 102:</b> System could not perform autoloading process");
 define("ERROR_103", "<b>Error - 103:</b> System could not load library ");
 define("ERROR_104", "<b>Error - 104:</b> System could not load aplication config");
+define("ERROR_105", "<b>Error - 105:</b> System could not find loader file");
+define("ERROR_106", "<b>Error - 106:</b> Invalid method call");
+define("ERROR_107", "<b>Error - 107:</b> System could not load controller ");
+define("ERROR_108", "<b>Error - 108:</b> System could not load view ");
 
 /**
  * Bootstrap launch
