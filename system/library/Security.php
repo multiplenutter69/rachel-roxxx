@@ -19,8 +19,8 @@ class Security {
      * @param integer $filter PHP filter option Eg: FILTER_SANITIZE_SPECIAL_CHARS
      * @return value The clean field
      */
-    public static function cleanImput($field, $filter) {
-        return trim(stripslashes(filter_var($field, $filter)));
+    public static function cleanImput($field, $filter = FILTER_SANITIZE_SPECIAL_CHARS) {
+        return trim(strip_tags(filter_var($field, $filter)));
     }
 
     /**

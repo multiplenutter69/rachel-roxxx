@@ -77,8 +77,12 @@ define("LOADPATH", SYSPATH . DS . "loader");
 define("LIBRARYPATH", SYSPATH . DS . "library");
 define("DEBUGPATH", SYSPATH . DS . "debug");
 
+define("POST", 1);
+define("GET", 0);
+
 define("VIEW_VERSION", "system/version");
 define("VIEW_WELCOME", "");
+
 
 /**
  * Error definition
@@ -88,9 +92,10 @@ define("ERROR_102", "<b>Error - 102:</b> System could not perform autoloading pr
 define("ERROR_103", "<b>Error - 103:</b> System could not load library ");
 define("ERROR_104", "<b>Error - 104:</b> System could not load aplication config");
 define("ERROR_105", "<b>Error - 105:</b> System could not find loader file");
-define("ERROR_106", "<b>Error - 106:</b> Invalid method call");
+define("ERROR_106", "<b>Error - 106:</b> Invalid method call ");
 define("ERROR_107", "<b>Error - 107:</b> System could not load controller ");
 define("ERROR_108", "<b>Error - 108:</b> System could not load view ");
+define("ERROR_109", "<b>Error - 109:</b> System could not load entitie ");
 
 /**
  * Bootstrap launch

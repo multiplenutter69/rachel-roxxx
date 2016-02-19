@@ -6,8 +6,25 @@
     </head>
     <body>
         <h1>Success!!</h1>
-        <p>
-            View Loaded using MVC pattern
-        </p>
+        
+        <table>
+            <caption><?php $tableCaption?></caption>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+            <?php 
+            foreach($data as $d){
+                echo "<tr>";
+                echo "<td>". $d["nombre"] ."</td>";
+                echo "<td>". $d["apellido"] ."</td>";
+                echo "<td>". $d["edad"] ."</td>";
+                echo "</tr>";
+            } 
+            
+            ?>
+        </table>
+        
     </body>
 </html>

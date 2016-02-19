@@ -89,6 +89,22 @@ foreach (glob(APPPATH . DS . "controllers" . DS . "*.php") as $lib) {
 }
 
 /**
+ * App entities Loading
+ */
+foreach (glob(APPPATH . DS . "entities" . DS . "*.php") as $lib) {
+    if (file_exists($lib)) {
+        if (!(require_once $lib)) {
+            echo ERROR_109 . " " . basename($lib) . "<br>";
+            exit(1);
+        }
+    } else {
+        echo ERROR_109 . " " . basename($lib) . "<br>";
+        exit(1);
+    }
+}
+
+
+/**
  * View Loader
  */
 if (file_exists(LOADPATH . DS . "viewLoader.php")) {

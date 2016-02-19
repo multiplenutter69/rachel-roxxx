@@ -30,6 +30,9 @@ if ($url == VIEW_WELCOME) {
     }
 }
 
+/**
+ * App Views
+ */
 $urlArray = explode("/", $url);
 
 $controller = $urlArray[0];
@@ -43,7 +46,7 @@ $obj = new $controller();
 if (method_exists($controller, $action)) {
     call_user_func_array(array($obj, $action), $arguments);
 } else {
-    echo ERROR_106 . "<br>";
+    echo ERROR_106 . $action . "<br>";
     exit(1);
 }
 
