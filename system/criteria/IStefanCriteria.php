@@ -21,7 +21,7 @@ interface IStefanCriteria {
 
     public function limit();
 
-    public function andConectr();
+    public function andConector();
 
     public function orConector();
 

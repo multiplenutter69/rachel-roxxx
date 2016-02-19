@@ -11,7 +11,7 @@
  * Notes        :
  */
 
-require_once(dirname(__FILE__)."/IStefanCriteria.php");
+require_once(SYSPATH . DS . "criteria" . DS . "IStefanCriteria.php");
 
 class MySqlCriteria implements IStefanCriteria {
 
@@ -100,7 +100,7 @@ class MySqlCriteria implements IStefanCriteria {
     /**
      * Adds the AND operator on the query criteria<br>
      */
-    public function andConectr() {
+    public function andConector() {
         $this->criteria .= "AND ";
     }
     /**

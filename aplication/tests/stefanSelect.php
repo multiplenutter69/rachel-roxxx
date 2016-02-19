@@ -29,16 +29,17 @@ class Test {
 }
 
 
-$list = new stefanList();
+$list = new StefanList();
 $list->add(new Test());
 $list->add(new Test());
 $list->add(new Test());
 $list->add(new Test());
 $list->add(new Test());
 
-$select = new stefanSelect(array("style" => "width:100%;","onchange" => "alert(123)"));
+$select = new StefanSelect(array("style" => "width:100%;","onchange" => "alert(123)"));
 $select->setData($list, "getAge", "getName");
 $select->display();
+
 
 
 

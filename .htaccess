@@ -1,22 +1,4 @@
-# Nombre        : .htaccess
-# Autor         : Stefan
-# Descripcion   : Archivo encargado de definir directivas de configuracion 
-#               : para los directorios del proyecto
-#
-# Ejemplo de uso: 
-#
-# Rewriterule ^nuevaUrl$      directorio/vista.php
-#  
-# nuevaUrl, es la url limpia que quedara en el navegador
-# directorio/vista es la ruta a la vista original de php y el directorio 
-# sera aquel en el que la vista se encuentre, considerando como base, la raiz
-# del proyecto
-#
-# IMPORTANTE    : Se debe aclarar en cada vista (php  o html) cual sera la url  
-#               : de base bajo la que se referenciaran el resto de las vistas
-
-
 RewriteEngine on
-
 RewriteCond %{SCRIPT_FILENAME} !-d  
 RewriteCond %{SCRIPT_FILENAME} !-f 
+RewriteRule .* index.php?url=$0 [PT,L]
