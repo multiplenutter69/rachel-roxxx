@@ -76,6 +76,7 @@ define("SYSPATH", dirname(__FILE__) . DS . $config["system_folder"]);
 define("LOADPATH", SYSPATH . DS . "loader");
 define("LIBRARYPATH", SYSPATH . DS . "library");
 define("DEBUGPATH", SYSPATH . DS . "debug");
+define("VIEWPATH", SYSPATH . DS . "view");
 
 define("POST", 1);
 define("GET", 0);

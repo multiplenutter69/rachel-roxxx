@@ -10,13 +10,13 @@ if (!$config["app_enable"]) {
         require_once APPPATH . DS . "views" . DS . $config["app_enable_view"];
         exit(1);
     } else {
-        require_once DEBUGPATH . DS . "enable.php";
+        require_once VIEWPATH . DS . "enable.php";
         exit(1);
     }
 }
 
 if ($url == VIEW_VERSION) {
-    require_once DEBUGPATH . DS . "version.php";
+    require_once VIEWPATH . DS . "version.php";
     exit(1);
 }
 
@@ -25,7 +25,7 @@ if ($url == VIEW_WELCOME) {
         require_once APPPATH . DS . "views" . DS . $config["app_welcome_view"];
         exit(1);
     } else {
-        require_once DEBUGPATH . DS . "welcome.php";
+        require_once VIEWPATH . DS . "welcome.php";
         exit(1);
     }
 }
