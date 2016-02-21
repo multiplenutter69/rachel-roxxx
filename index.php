@@ -57,10 +57,22 @@ $config["app_libraries"] = "*";
  * The value of the key to be ussed on all the encryption process. 
  * Encryption is made using AES security
  */
-$config["aes_key"] = "stefanframework";
+$config["aes_key"] = "stefanframework rocks!";
+/**
+ * Sets the driver to be used to perform all the DB Operations
+ * Available Drivers:
+ * - MySqlDriver    : Classic mysql functions
+ * - MySqliDriver   : mysqli functions
+ * - MySqlPDODriver : PDO db functions
+ */
+$config["db_driver"] = "MySqlDriver";
+/**
+ * Sets the time to live of a sesion. In seconds
+ */
+$config["sesion_ttl"] = 1200;
 
 //==============================================================================
-// System core configuration. Don't mess with this, don't be a little bitch
+// System core configuration. Don't mess with this, don't be a pussy
 //==============================================================================
 
 /**
@@ -76,14 +88,14 @@ define("SYSPATH", dirname(__FILE__) . DS . $config["system_folder"]);
 define("LOADPATH", SYSPATH . DS . "loader");
 define("LIBRARYPATH", SYSPATH . DS . "library");
 define("DEBUGPATH", SYSPATH . DS . "debug");
+define("MODELPATH", SYSPATH . DS . "model");
 define("VIEWPATH", SYSPATH . DS . "view");
-
-define("POST", 1);
-define("GET", 0);
+define("CONTROLLERPATH", SYSPATH . DS . "controller");
+define("COLLECTIONPATH", SYSPATH . DS . "collections");
+define("CRITERIAPATH", SYSPATH . DS . "criteria");
 
 define("VIEW_VERSION", "system/version");
 define("VIEW_WELCOME", "");
-
 
 /**
  * Error definition
@@ -97,6 +109,12 @@ define("ERROR_106", "<b>Error - 106:</b> Invalid method call ");
 define("ERROR_107", "<b>Error - 107:</b> System could not load controller ");
 define("ERROR_108", "<b>Error - 108:</b> System could not load view ");
 define("ERROR_109", "<b>Error - 109:</b> System could not load entitie ");
+define("ERROR_110", "<b>Error - 110:</b> System could not find system autoloader file");
+define("ERROR_111", "<b>Error - 111:</b> System could not find aplication autoloader file");
+define("ERROR_112", "<b>Error - 112:</b> System could not load model ");
+define("ERROR_113", "<b>Error - 113:</b> System could not load db driver ");
+
+define("ERROR_201" , "<b>Error - 201:</b> Unable to connect with db");
 
 /**
  * Bootstrap launch
