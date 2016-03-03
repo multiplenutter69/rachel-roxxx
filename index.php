@@ -108,7 +108,7 @@ define("ERROR_105", "<b>Error - 105:</b> System could not find loader file");
 define("ERROR_106", "<b>Error - 106:</b> Invalid method call ");
 define("ERROR_107", "<b>Error - 107:</b> System could not load controller ");
 define("ERROR_108", "<b>Error - 108:</b> System could not load view ");
-define("ERROR_109", "<b>Error - 109:</b> System could not load entitie ");
+define("ERROR_109", "<b>Error - 109:</b> System could not load user library ");
 define("ERROR_110", "<b>Error - 110:</b> System could not find system autoloader file");
 define("ERROR_111", "<b>Error - 111:</b> System could not find aplication autoloader file");
 define("ERROR_112", "<b>Error - 112:</b> System could not load model ");
