@@ -27,6 +27,7 @@ class UserController extends StefanController {
     
     public function user(){
         $this->loadView("exampleAdd");
+        
     }
     
     public function addUser(){

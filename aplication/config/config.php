@@ -6,3 +6,5 @@ $config["db_password"] = "";
 $config["db_port"] = "";
 $config["db_schema"] = "";
 $config["db_charset"] = "";
+
+$config["autoload"] = array();
