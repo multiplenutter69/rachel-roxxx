@@ -13,13 +13,16 @@ require_once MODELPATH . DS . "SQLBuilders" . DS . "ISqlBuilder.php";
 
 class MySqlBuilder implements ISqlBuilder {
     
+    private function tableName($obj){
+        return strtolower(get_class($obj));
+    }
     
     public function insert($obj, $filter = ReflectionProperty::IS_PRIVATE){
         
         $reflect = new ReflectionClass($obj);
         $props = $reflect->getProperties($filter);
 
-        $query = "INSERT INTO " . get_class($obj) . "(";
+        $query = "INSERT INTO " . $this->tableName($obj) . "(";
         
         foreach ($props as $prop) {
             $query .= $prop->getName() . ",";
@@ -42,7 +45,7 @@ class MySqlBuilder implements ISqlBuilder {
         $reflect = new ReflectionClass($obj);
         $props = $reflect->getProperties($filter);
 
-        $query = "UPDATE " . get_class($obj) . "SET ";
+        $query = "UPDATE " . $this->tableName($obj) . "SET ";
         
         foreach ($props as $prop) {
             $query .= $prop->getName() . " = '" . call_user_func(array($obj, "get" . ucfirst($prop->getName()))) ."',";
@@ -55,7 +58,7 @@ class MySqlBuilder implements ISqlBuilder {
     }
     
     public function delete($obj, $criteria = ""){
-        $query = "DELETE FROM " . get_class($obj) . " " . $criteria;
+        $query = "DELETE FROM " . $this->tableName($obj) . " " . $criteria;
         return $query; 
     }
     

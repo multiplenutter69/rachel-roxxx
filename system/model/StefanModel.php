@@ -28,13 +28,14 @@ class StefanModel {
         $this->qb = $qb;
     }
 
-    public function save($obj) {
-
-        //SI EXISTE EL "ID" ACTUALIZA, SINO, INSERTA
-
-        $query = $this->qb->insert($obj);
-
-
+    public function save($obj, $exp = "") {
+        $id = call_user_func(array($obj, "getId"));
+        if (empty($id)) {
+            $query = $this->qb->insert($obj);
+        } else {
+            $condition = Criteria::generateCondition($exp, $obj);
+            $query = $this->qb->update($obj, $condition);
+        }
         return $this->driver->executeNonQuery($query);
     }
 
@@ -72,6 +73,14 @@ class StefanModel {
         }
 
         return $result;
+    }
+
+    public function findOneToMay($exp, $obj, $matchExp) {
+        
+    }
+    
+    public function findManyToMany($exp, $obj, $matchExp){
+        
     }
 
 }
