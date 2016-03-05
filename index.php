@@ -92,7 +92,6 @@ define("MODELPATH", SYSPATH . DS . "model");
 define("VIEWPATH", SYSPATH . DS . "view");
 define("CONTROLLERPATH", SYSPATH . DS . "controller");
 define("COLLECTIONPATH", SYSPATH . DS . "collections");
-define("CRITERIAPATH", SYSPATH . DS . "criteria");
 
 define("VIEW_VERSION", "system/version");
 define("VIEW_WELCOME", "");

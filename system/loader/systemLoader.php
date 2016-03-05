@@ -54,10 +54,10 @@ foreach (glob(COLLECTIONPATH . DS . "*.php") as $lib) {
 }
 
 /**
- * System Model Driver Loading
+ * System Model RDB Driver Loading
  */
 $driver = $config["db_driver"] . ".php";
-$driverPath = MODELPATH . DS . "drivers" . DS . $driver;
+$driverPath = MODELPATH . DS . "RDBDrivers" . DS . $driver;
 if (file_exists($driverPath)) {
     if (!(require_once $driverPath)) {
         echo ERROR_113 . $driver . "<br>";
@@ -65,6 +65,21 @@ if (file_exists($driverPath)) {
     }
 } else {
     echo ERROR_113 . $driver . "<br>";
+    exit(1);
+}
+
+/**
+ * System Model SQL Builders Loading
+ */
+$builder = substr($config["db_driver"], 0, 5) . "Builder.php";
+$builderPath = MODELPATH . DS . "SQLBuilders" . DS . $builder;
+if (file_exists($builderPath)) {
+    if (!(require_once $builderPath)) {
+        echo ERROR_113 . $builder . "<br>";
+        exit(1);
+    }
+} else {
+    echo ERROR_113 . $builder . "<br>";
     exit(1);
 }
 

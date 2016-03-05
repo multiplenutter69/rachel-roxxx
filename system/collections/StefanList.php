@@ -9,7 +9,6 @@
  *              : in the use of list collections
  * Notes        :
  */
-require_once(SYSPATH . DS . "collections" . DS. "stefancollection" . DS . "IStefanCollection.php");
 
 define("ASC", 1);
 define("DESC", 2);
